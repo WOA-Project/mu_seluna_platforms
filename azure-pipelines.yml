@@ -1,0 +1,159 @@
+# SelunaPkg CI build on VSTS
+
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    exclude:
+    - README.md
+    - LICENSE
+
+pool:
+  vmImage: 'ubuntu-latest'
+  
+steps:
+###################################################################################################################
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.10'
+    architecture: 'x64'
+  displayName: Setup correct Python
+
+###################################################################################################################
+
+- script: export CLANGPDB_BIN=/usr/lib/llvm-38/bin/ && export CLANGPDB_AARCH64_PREFIX=aarch64-linux-gnu-
+  displayName: 'Setup CLANG environment'
+
+###################################################################################################################
+
+- script: chmod +x ./build_setup.sh && ./build_setup.sh
+  displayName: 'Setup UEFI build environment'
+
+###################################################################################################################
+
+- script: chmod +x ./build_fd_selene.sh && ./build_fd_selene.sh
+  displayName: 'Build Selene FD'
+
+# Publish FD
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Selene UEFI (FD for making your own Dual Boot Image)'
+  inputs:
+    pathtoPublish: ./ImageResources/Selene/SW5100_EFI.fd
+    artifactName: Selene UEFI (FD for making your own Dual Boot Image)
+
+# Publish FD (Secure Boot Disabled)
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Selene UEFI (Secure Boot Disabled) (FD for making your own Dual Boot Image)'
+  inputs:
+    pathtoPublish: ./ImageResources/Selene/SW5100_EFI_NOSB.fd
+    artifactName: Selene UEFI (Secure Boot Disabled) (FD for making your own Dual Boot Image)
+
+###################################################################################################################
+
+- script: chmod +x ./build_bootshim_selene.sh && ./build_bootshim_selene.sh
+  displayName: 'Build Selene BootShim'
+
+###################################################################################################################
+
+- script: chmod +x ./build_uefi_selene.sh && ./build_uefi_selene.sh
+  displayName: 'Build Selene UEFI'
+
+# Publish UEFI
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Selene UEFI (Fast Boot)'
+  inputs:
+    pathtoPublish: ./ImageResources/Selene/uefi.img
+    artifactName: Selene UEFI (Fast Boot)
+
+# Publish UEFI (Secure Boot Disabled)
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Selene UEFI (Secure Boot Disabled) (Fast Boot)'
+  inputs:
+    pathtoPublish: ./ImageResources/Selene/uefi_nosb.img
+    artifactName: Selene UEFI (Secure Boot Disabled) (Fast Boot)
+
+###################################################################################################################
+
+- script: chmod +x ./build_boot_selene.sh && ./build_boot_selene.sh
+  displayName: 'Build Selene Boot'
+
+# Publish Boot
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Selene UEFI (Dual Boot)'
+  inputs:
+    pathtoPublish: ./ImageResources/Selene/boot.img
+    artifactName: Selene UEFI (Dual Boot)
+
+# Publish Boot (Secure Boot Disabled)
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Selene UEFI (Secure Boot Disabled) (Dual Boot)'
+  inputs:
+    pathtoPublish: ./ImageResources/Selene/boot_nosb.img
+    artifactName: Selene UEFI (Secure Boot Disabled) (Dual Boot)
+
+###################################################################################################################
+
+- script: chmod +x ./build_fd_luna.sh && ./build_fd_luna.sh
+  displayName: 'Build Luna FD'
+
+# Publish FD
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Luna UEFI (FD for making your own Dual Boot Image)'
+  inputs:
+    pathtoPublish: ./ImageResources/Luna/SW5100_EFI.fd
+    artifactName: Luna UEFI (FD for making your own Dual Boot Image)
+
+# Publish FD (Secure Boot Disabled)
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Luna UEFI (Secure Boot Disabled) (FD for making your own Dual Boot Image)'
+  inputs:
+    pathtoPublish: ./ImageResources/Luna/SW5100_EFI_NOSB.fd
+    artifactName: Luna UEFI (Secure Boot Disabled) (FD for making your own Dual Boot Image)
+
+###################################################################################################################
+
+- script: chmod +x ./build_bootshim_luna.sh && ./build_bootshim_luna.sh
+  displayName: 'Build Luna BootShim'
+
+###################################################################################################################
+
+- script: chmod +x ./build_uefi_luna.sh && ./build_uefi_luna.sh
+  displayName: 'Build Luna UEFI'
+
+# Publish UEFI
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Luna UEFI (Fast Boot)'
+  inputs:
+    pathtoPublish: ./ImageResources/Luna/uefi.img
+    artifactName: Luna UEFI (Fast Boot)
+
+# Publish UEFI (Secure Boot Disabled)
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Luna UEFI (Secure Boot Disabled) (Fast Boot)'
+  inputs:
+    pathtoPublish: ./ImageResources/Luna/uefi_nosb.img
+    artifactName: Luna UEFI (Secure Boot Disabled) (Fast Boot)
+
+###################################################################################################################
+
+- script: chmod +x ./build_boot_luna.sh && ./build_boot_luna.sh
+  displayName: 'Build Luna Boot'
+
+# Publish Boot
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Luna UEFI (Dual Boot)'
+  inputs:
+    pathtoPublish: ./ImageResources/Luna/boot.img
+    artifactName: Luna UEFI (Dual Boot)
+
+
+# Publish Boot (Secure Boot Disabled)
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Luna UEFI (Secure Boot Disabled) (Dual Boot)'
+  inputs:
+    pathtoPublish: ./ImageResources/Luna/boot_nosb.img
+    artifactName: Luna UEFI (Secure Boot Disabled) (Dual Boot)
+
+###################################################################################################################

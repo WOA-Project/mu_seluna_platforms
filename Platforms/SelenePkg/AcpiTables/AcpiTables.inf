@@ -1,0 +1,51 @@
+## @file
+#
+#  ACPI table data and ASL sources required to boot the platform.
+#
+#  Copyright (c) 2020, Linaro Ltd. All rights reserved.
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x0001001A
+  BASE_NAME                      = AcpiTables
+  FILE_GUID                      = 7E374E25-8E01-4FEE-87F2-390C23C606CD
+  MODULE_TYPE                    = USER_DEFINED
+  VERSION_STRING                 = 1.0
+
+[Sources]
+  FACP.aslc
+  #SoftwareTpm2Table.aslc
+  #SoftwareTpm2Device.asl
+  #SelfSignedDriverEnabler.asl
+
+[Binaries.AARCH64]
+   ASL|SelunaACPI/8150/builtin/APIC.aml
+   ASL|SelunaACPI/8150/builtin/CSRT.aml
+   ASL|SelunaACPI/8150/builtin/DBG2.aml
+   ASL|SelunaACPI/8150/builtin/DSDT.aml
+   ASL|SelunaACPI/8150/builtin/GTDT.aml
+   ASL|SelunaACPI/8150/builtin/IORT.aml
+   ASL|SelunaACPI/8150/builtin/MCFG.aml
+   ASL|SelunaACPI/8150/builtin/PPTT.aml
+   ASL|SelunaACPI/common/builtin/SSDT.aml
+   ASL|SelunaACPI/common/builtin/TPMDev.dat
+   ASL|SelunaACPI/common/builtin/SoftwareTpm2Table.aml
+
+[Packages]
+  ArmPkg/ArmPkg.dec
+  ArmPlatformPkg/ArmPlatformPkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  MdePkg/MdePkg.dec
+  SelenePkg/SelenePkg.dec
+  SelunaFamilyPkg/SelunaFamilyPkg.dec
+
+[FixedPcd]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiDefaultCreatorId
+  gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiDefaultCreatorRevision
+  gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiDefaultOemId
+  gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiDefaultOemTableId
+  gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiDefaultOemRevision

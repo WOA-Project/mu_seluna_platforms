@@ -1,0 +1,36 @@
+[submodule "MU_BASECORE"]
+	path = MU_BASECORE
+	url = https://github.com/microsoft/mu_basecore.git
+	branch = release/202405
+[submodule "Common/MU_TIANO"]
+	path = Common/MU_TIANO
+	url = https://github.com/microsoft/mu_tiano_plus.git
+	branch = release/202405
+[submodule "Common/MU"]
+	path = Common/MU
+	url = https://github.com/microsoft/mu_plus.git
+	branch = release/202405
+[submodule "Common/MU_OEM_SAMPLE"]
+	path = Common/MU_OEM_SAMPLE
+	url = https://github.com/microsoft/mu_oem_sample.git
+	branch = release/202405
+[submodule "Silicon/Arm/MU_TIANO"]
+	path = Silicon/Arm/MU_TIANO
+	url = https://github.com/microsoft/mu_silicon_arm_tiano.git
+	branch = release/202405
+[submodule "Platforms/SelunaBinaries"]
+	path = Binaries
+	url = https://github.com/WOA-Project/SelunaBinaries.git
+[submodule "Platforms/SelunaACPI"]
+	path = Platforms/SelunaACPI
+	url = https://github.com/WOA-Project/Seluna-ACPI
+[submodule "Features/DFCI"]
+	path = Features/DFCI
+	url = https://github.com/microsoft/mu_feature_dfci
+[submodule "Features/CONFIG"]
+	path = Features/CONFIG
+	url = https://github.com/microsoft/mu_feature_config.git
+[submodule "Platforms/OpensslPkg/Library/OpensslLib/openssl"]
+	path = Platforms/OpensslPkg/Library/OpensslLib/openssl
+	url = https://github.com/openssl/openssl.git
+	branch = 830bf8e1e4749ad65c51b6a1d0d769ae689404ba

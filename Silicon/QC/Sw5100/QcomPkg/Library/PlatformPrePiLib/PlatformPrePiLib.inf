@@ -11,7 +11,7 @@
 
 [Packages]
   MdePkg/MdePkg.dec
-  SelunaFamilyPkg/SelunaFamilyPkg.dec
+  SelunaPkg/SelunaPkg.dec
 
 [LibraryClasses]
   BaseLib

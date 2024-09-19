@@ -20,8 +20,8 @@
 #
 ################################################################################
 
-[FD.SM8350_EFI]
-BaseAddress   = 0x9FC41000|gArmTokenSpaceGuid.PcdFdBaseAddress #The base address of the FLASH Device.
+[FD.SW5100_EFI]
+BaseAddress   = 0x5FC41000|gArmTokenSpaceGuid.PcdFdBaseAddress #The base address of the FLASH Device.
 Size          = 0x002BF000|gArmTokenSpaceGuid.PcdFdSize        #The size in bytes of the FLASH Device
 ErasePolarity = 1
 BlockSize     = 0x1000
@@ -82,7 +82,7 @@ READ_LOCK_STATUS   = TRUE
   !include QcomPkg/Include/DXE.inc
 
   # Secure Boot Key Enroll
-  INF SelunaFamilyPkg/Driver/SecureBootProvisioningDxe/SecureBootProvisioningDxe.inf
+  INF SelunaPkg/Driver/SecureBootProvisioningDxe/SecureBootProvisioningDxe.inf
 
   INF EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
@@ -102,17 +102,17 @@ READ_LOCK_STATUS   = TRUE
   # ACPI and SMBIOS
   INF MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
   INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
-  INF SelunaFamilyPkg/Driver/SmBiosTableDxe/SmBiosTableDxe.inf
+  INF SelunaPkg/Driver/SmBiosTableDxe/SmBiosTableDxe.inf
 
   # ACPI Tables
-  INF RuleOverride=ACPITABLE LunaPkg/AcpiTables/AcpiTables.inf
+  #INF RuleOverride=ACPITABLE LunaPkg/AcpiTables/AcpiTables.inf
 
   INF MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf
 
-  !include SelunaFamilyPkg/Frontpage.fdf.inc
+  !include SelunaPkg/Frontpage.fdf.inc
 
   FILE FREEFORM = PCD(gOemPkgTokenSpaceGuid.PcdLogoFile) {
-    SECTION RAW = SelunaFamilyPkg/Include/Resources/BootLogo.bmp
+    SECTION RAW = SelunaPkg/Include/Resources/BootLogo.bmp
     SECTION UI = "BootLogo.bmp"
   }
 
@@ -176,8 +176,7 @@ READ_LOCK_STATUS   = TRUE
   # INF NetworkPkg/UefiPxeBcDxe/UefiPxeBcDxe.inf
   # INF NetworkPkg/VlanConfigDxe/VlanConfigDxe.inf
 
-  INF SelunaFamilyPkg/Driver/SurfaceFirmwareProvisioningDataDxe/SurfaceFirmwareProvisioningDataDxe.inf
-  INF SelunaFamilyPkg/UFP/ufpdevicefw.inf
+  INF SelunaPkg/UFP/ufpdevicefw.inf
 
   INF QcomModulePkg/Application/LinuxLoader/LinuxLoader.inf
 
@@ -199,11 +198,11 @@ READ_STATUS        = TRUE
 READ_LOCK_CAP      = TRUE
 READ_LOCK_STATUS   = TRUE
 
-  INF SelunaFamilyPkg/PrePi/PeiUniCore.inf
+  INF SelunaPkg/PrePi/PeiUniCore.inf
 
   FILE FREEFORM = dde58710-41cd-4306-dbfb-3fa90bb1d2dd {
     SECTION UI = "uefiplat.cfg"
-    SECTION RAW = Zeta/BOOT.MXF.1.0-00893-LAHAINA-1.7786.2/RawFiles/uefiplat.cfg
+    SECTION RAW = Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/RawFiles/uefiplat.cfg
   }
 
   FILE FV_IMAGE = 9E21FD93-9C72-4c15-8C4B-E77F1DB2D792 {
@@ -212,4 +211,4 @@ READ_LOCK_STATUS   = TRUE
     }
   }
 
-  !include SelunaFamilyPkg/SelunaFamily.fdf.inc
+  !include SelunaPkg/Seluna.fdf.inc

@@ -43,7 +43,7 @@ class CommonPlatform():
         "Features/DFCI",
         "Features/CONFIG",
         "Binaries",
-        "Silicon/QC/Sm8150"
+        "Silicon/QC/Sw5100"
     )
 
 
@@ -72,7 +72,6 @@ class SettingsManager(UpdateSettingsManager, SetupSettingsManager, PrEvalSetting
             If no RequiredSubmodules return an empty iterable
         """
         return [
-            RequiredSubmodule("Binaries", True),
             RequiredSubmodule("Common/MU_OEM_SAMPLE", True),
             RequiredSubmodule("Common/MU_TIANO", True),
             RequiredSubmodule("Common/MU", True),
@@ -80,7 +79,6 @@ class SettingsManager(UpdateSettingsManager, SetupSettingsManager, PrEvalSetting
             RequiredSubmodule("Features/DFCI", True),
             RequiredSubmodule("MU_BASECORE", True),
             RequiredSubmodule("Platforms/OpensslPkg/Library/OpensslLib/openssl", True),
-            RequiredSubmodule("Platforms/SelunaACPI", True),
             RequiredSubmodule("Silicon/Arm/MU_TIANO", True),
         ]
 
@@ -222,9 +220,9 @@ class PlatformBuilder(UefiBuilder, BuildSettingsManager):
         self.env.SetValue("BLD_*_MEMORY_PROTECTION", "TRUE", "Default")
         # Include the MFCI test cert by default, override on the commandline with "BLD_*_SHIP_MODE=TRUE" if you want the retail MFCI cert
         self.env.SetValue("BLD_*_SHIP_MODE", "FALSE", "Default")
-        self.env.SetValue("CONF_AUTOGEN_INCLUDE_PATH", self.edk2path.GetAbsolutePathOnThisSystemFromEdk2RelativePath("Platforms", "SelunaFamilyPkg", "Include"), "Platform Defined")
-        self.env.SetValue("MU_SCHEMA_DIR", self.edk2path.GetAbsolutePathOnThisSystemFromEdk2RelativePath("Platforms", "SelunaFamilyPkg", "CfgData"), "Platform Defined")
-        self.env.SetValue("MU_SCHEMA_FILE_NAME", "SelunaFamilyPkgCfgData.xml", "Platform Hardcoded")
+        self.env.SetValue("CONF_AUTOGEN_INCLUDE_PATH", self.edk2path.GetAbsolutePathOnThisSystemFromEdk2RelativePath("Platforms", "SelunaPkg", "Include"), "Platform Defined")
+        self.env.SetValue("MU_SCHEMA_DIR", self.edk2path.GetAbsolutePathOnThisSystemFromEdk2RelativePath("Platforms", "SelunaPkg", "CfgData"), "Platform Defined")
+        self.env.SetValue("MU_SCHEMA_FILE_NAME", "SelunaPkgCfgData.xml", "Platform Hardcoded")
 
         return 0
 

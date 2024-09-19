@@ -14,9 +14,9 @@ BuildConfig.conf
 
 /Conf/
 /Seluna/
-Platforms/SelunaFamilyPkg/Include/Generated/ConfigServiceGenerated.h
-Platforms/SelunaFamilyPkg/Include/Generated/ConfigDataGenerated.h
-Platforms/SelunaFamilyPkg/Include/Generated/ConfigClientGenerated.h
+Platforms/SelunaPkg/Include/Generated/ConfigServiceGenerated.h
+Platforms/SelunaPkg/Include/Generated/ConfigDataGenerated.h
+Platforms/SelunaPkg/Include/Generated/ConfigClientGenerated.h
 
 ImageResources/Selene/bootpayload.bin
 ImageResources/Selene/dualbootbootpayload.bin

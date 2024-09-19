@@ -59,7 +59,7 @@
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
   QcomModulePkg/QcomModulePkg.dec
-  SelunaFamilyPkg/SelunaFamilyPkg.dec
+  SelunaPkg/SelunaPkg.dec
 
 [LibraryClasses]
   UefiApplicationEntryPoint
@@ -102,4 +102,4 @@
   gQcomTokenSpaceGuid.EnableBatteryVoltageCheck
   gQcomTokenSpaceGuid.EnableMultiThreadFlash
   gQcomTokenSpaceGuid.EnableDisplayMenu
-  gSelunaFamilyPkgTokenSpaceGuid.PcdABLProduct
+  gSelunaPkgTokenSpaceGuid.PcdABLProduct

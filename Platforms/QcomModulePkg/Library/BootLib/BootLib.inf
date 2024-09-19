@@ -82,7 +82,7 @@
 	ArmPlatformPkg/ArmPlatformPkg.dec
 	MdeModulePkg/MdeModulePkg.dec
 	QcomModulePkg/QcomModulePkg.dec
-  	SelunaFamilyPkg/SelunaFamilyPkg.dec
+  	SelunaPkg/SelunaPkg.dec
 
 [LibraryClasses]
 	DxeServicesTableLib
@@ -173,7 +173,7 @@
 	gQcomTokenSpaceGuid.KernelLoadAddress32
 	gQcomTokenSpaceGuid.EnableMdtpSupport
 	gQcomTokenSpaceGuid.EnableNewNodeSearchFuc
-  	gSelunaFamilyPkgTokenSpaceGuid.PcdABLProduct
+  	gSelunaPkgTokenSpaceGuid.PcdABLProduct
 
 [Depex]
 	TRUE

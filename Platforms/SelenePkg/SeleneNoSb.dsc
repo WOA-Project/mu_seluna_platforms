@@ -26,19 +26,20 @@
   FLASH_DEFINITION               = SelenePkg/Selene.fdf
   SECURE_BOOT                    = 0
   USE_PHYSICAL_TIMER             = 1
-  USE_SCREEN_FOR_SERIAL_OUTPUT   = 0
+  USE_SCREEN_FOR_SERIAL_OUTPUT   = 1
   USE_MEMORY_FOR_SERIAL_OUTPUT   = 0
 
   DEFAULT_KEYS                   = FALSE
-  PK_DEFAULT_FILE                = SelunaFamilyPkg/Include/Resources/SecureBoot/keystore/OEMA0-PK.der
-  KEK_DEFAULT_FILE1              = SelunaFamilyPkg/Include/Resources/SecureBoot/keystore/Kek/MicCorKEKCA2011_2011-06-24.der
-  KEK_DEFAULT_FILE2              = SelunaFamilyPkg/Include/Resources/SecureBoot/keystore/Kek/microsoft_corporation_kek_2k_ca_2023.der
-  KEK_DEFAULT_FILE3              = SelunaFamilyPkg/Include/Resources/SecureBoot/keystore/OEMA0-KEK.der
-  DB_DEFAULT_FILE1               = SelunaFamilyPkg/Include/Resources/SecureBoot/keystore/Db/MicWinProPCA2011_2011-10-19.der
-  DB_DEFAULT_FILE2               = SelunaFamilyPkg/Include/Resources/SecureBoot/keystore/Db/windows_uefi_ca_2023.der
-  DB_DEFAULT_FILE3               = SelunaFamilyPkg/Include/Resources/SecureBoot/keystore/Db/MicCorUEFCA2011_2011-06-27.der
-  DB_DEFAULT_FILE4               = SelunaFamilyPkg/Include/Resources/SecureBoot/keystore/Db/microsoft_uefi_ca_2023.der
-  DBX_DEFAULT_FILE1              = SelunaFamilyPkg/Include/Resources/SecureBoot/Artifacts/Aarch64/DefaultDbx.bin
+  PK_DEFAULT_FILE                = SelunaPkg/Include/Resources/SecureBoot/keystore/OEMA0-PK.der
+  KEK_DEFAULT_FILE1              = SelunaPkg/Include/Resources/SecureBoot/keystore/KEK/Certificates/MicCorKEKCA2011_2011-06-24.der
+  KEK_DEFAULT_FILE2              = SelunaPkg/Include/Resources/SecureBoot/keystore/KEK/Certificates/microsoft_corporation_kek_2k_ca_2023.der
+  KEK_DEFAULT_FILE3              = SelunaPkg/Include/Resources/SecureBoot/keystore/OEMA0-KEK.der
+  DB_DEFAULT_FILE1               = SelunaPkg/Include/Resources/SecureBoot/keystore/DB/Certificates/MicWinProPCA2011_2011-10-19.der
+  DB_DEFAULT_FILE2               = SelunaPkg/Include/Resources/SecureBoot/keystore/DB/Certificates/windows_uefi_ca_2023.der
+  DB_DEFAULT_FILE3               = SelunaPkg/Include/Resources/SecureBoot/keystore/DB/Certificates/MicCorUEFCA2011_2011-06-27.der
+  DB_DEFAULT_FILE4               = SelunaPkg/Include/Resources/SecureBoot/keystore/DB/Certificates/microsoft_uefi_ca_2023.der
+  DB_DEFAULT_FILE5               = SelunaPkg/Include/Resources/SecureBoot/keystore/DB/Certificates/microsoft_option_rom_uefi_ca_2023.der
+  DBX_DEFAULT_FILE1              = SelunaPkg/Include/Resources/SecureBoot/Artifacts/Aarch64/DefaultDbx.bin
 
   PEI_CRYPTO_SERVICES            = NONE
   DXE_CRYPTO_SERVICES            = STANDARD
@@ -58,34 +59,34 @@
 
 [PcdsFixedAtBuild.common]
   # Platform-specific
-  gArmTokenSpaceGuid.PcdSystemMemorySize|0x180000000        # 6GB Size
+  gArmTokenSpaceGuid.PcdSystemMemorySize|0x80000000        # 2GB Size
 
   # SMBIOS
-  gSelunaFamilyPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Selene"
-  gSelunaFamilyPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"XXXX"
-  gSelunaFamilyPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Selene"
-  gSelunaFamilyPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Selene"
+  gSelunaPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Selene"
+  gSelunaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"XXXX"
+  gSelunaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Selene"
+  gSelunaPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Selene"
 
   # Simple FrameBuffer
-  gSelunaFamilyPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1350
-  gSelunaFamilyPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|1800
-  gSelunaFamilyPkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32
+  gSelunaPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|408
+  gSelunaPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|408
+  gSelunaPkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32
 
-  gSelunaFamilyPkgTokenSpaceGuid.PcdABLProduct|"selene"
+  gSelunaPkgTokenSpaceGuid.PcdABLProduct|"selene"
 
 [PcdsDynamicDefault.common]
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1350
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|1800
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|1350
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|1800
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|168 # 168.75 = 1350 / EFI_GLYPH_WIDTH(8)
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|94 # 94.73 = 1800 / EFI_GLYPH_HEIGHT(19)
-  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|168 # 168.75 = 1350 / EFI_GLYPH_WIDTH(8)
-  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|94 # 94.73 = 1800 / EFI_GLYPH_HEIGHT(19)
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|408
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|408
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|408
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|408
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|51 # 51 = 408 / EFI_GLYPH_WIDTH(8)
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|21 # 21.47 = 408 / EFI_GLYPH_HEIGHT(19)
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|51 # 51 = 408 / EFI_GLYPH_WIDTH(8)
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|21 # 21.47 = 408 / EFI_GLYPH_HEIGHT(19)
 
 !include QcomPkg/QcomPkg.dsc.inc
-!include SelunaFamilyPkg/SelunaFamily.dsc.inc
-!include SelunaFamilyPkg/Frontpage.dsc.inc
+!include SelunaPkg/Seluna.dsc.inc
+!include SelunaPkg/Frontpage.dsc.inc
 
 [Components.common]
-  SelenePkg/AcpiTables/AcpiTables.inf
+  #SelenePkg/AcpiTables/AcpiTables.inf

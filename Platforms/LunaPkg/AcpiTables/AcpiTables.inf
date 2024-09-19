@@ -22,15 +22,15 @@
   #SelfSignedDriverEnabler.asl
 
 [Binaries.AARCH64]
-   ASL|SelunaACPI/8350/builtin/APIC.aml
-   ASL|SelunaACPI/8350/builtin/CSRT.aml
-   ASL|SelunaACPI/8350/builtin/DBG2.OEMZE.aml
-   ASL|SelunaACPI/8350/builtin/DSDT.aml
-   ASL|SelunaACPI/8350/builtin/GTDT.aml
-   ASL|SelunaACPI/8350/builtin/IORT.aml
-   ASL|SelunaACPI/8350/builtin/MCFG.aml
-   ASL|SelunaACPI/8350/builtin/PPTT.aml
-   ASL|SelunaACPI/8350/builtin/SPCR.aml
+   ASL|SelunaACPI/5100/builtin/APIC.aml
+   ASL|SelunaACPI/5100/builtin/CSRT.aml
+   ASL|SelunaACPI/5100/builtin/DBG2.OEMZE.aml
+   ASL|SelunaACPI/5100/builtin/DSDT.aml
+   ASL|SelunaACPI/5100/builtin/GTDT.aml
+   ASL|SelunaACPI/5100/builtin/IORT.aml
+   ASL|SelunaACPI/5100/builtin/MCFG.aml
+   ASL|SelunaACPI/5100/builtin/PPTT.aml
+   ASL|SelunaACPI/5100/builtin/SPCR.aml
    ASL|SelunaACPI/common/builtin/SSDT.aml
    ASL|SelunaACPI/common/builtin/TPMDev.dat
    ASL|SelunaACPI/common/builtin/SoftwareTpm2Table.aml

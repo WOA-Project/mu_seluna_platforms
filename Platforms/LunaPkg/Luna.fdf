@@ -20,7 +20,7 @@
 #
 ################################################################################
 
-[FD.SM8350_EFI]
+[FD.SW5100_EFI]
 BaseAddress   = 0x9FC41000|gArmTokenSpaceGuid.PcdFdBaseAddress #The base address of the FLASH Device.
 Size          = 0x002BF000|gArmTokenSpaceGuid.PcdFdSize        #The size in bytes of the FLASH Device
 ErasePolarity = 1
@@ -203,7 +203,7 @@ READ_LOCK_STATUS   = TRUE
 
   FILE FREEFORM = dde58710-41cd-4306-dbfb-3fa90bb1d2dd {
     SECTION UI = "uefiplat.cfg"
-    SECTION RAW = Zeta/BOOT.MXF.1.0-00893-LAHAINA-1.7786.2/RawFiles/uefiplat.cfg
+    SECTION RAW = Seluna/BOOT.XF.4.3-00248-ATHERTONLAZ-2/RawFiles/uefiplat.cfg
   }
 
   FILE FV_IMAGE = 9E21FD93-9C72-4c15-8C4B-E77F1DB2D792 {

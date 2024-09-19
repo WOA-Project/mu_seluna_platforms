@@ -37,7 +37,6 @@
   MsUiThemeLib
   MuUefiVersionLib
   PcdLib
-  PlatformHobLib
   UefiBootServicesTableLib
 
 [Protocols]

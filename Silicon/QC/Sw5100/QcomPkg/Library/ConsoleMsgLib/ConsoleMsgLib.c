@@ -13,7 +13,6 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
 #include <Library/MsUiThemeLib.h>
 #include <Library/MuUefiVersionLib.h>
 #include <Library/PcdLib.h>
-#include <Library/PlatformHobLib.h>
 #include <Library/PrintLib.h>
 #include <Library/UefiBootServicesTableLib.h>
 #include <Protocol/EFIChipInfo.h>
@@ -167,48 +166,6 @@ VOID EFIAPI ConsolePrint(IN CONST CHAR16 *Format, ...)
   return;
 }
 
-CHAR8 *PlatformSubTypeSkuString[] = {
-    [PLATFORM_SUBTYPE_UNKNOWN]         = "Unknown",
-    [PLATFORM_SUBTYPE_CHARM]           = "Unknown",
-    [PLATFORM_SUBTYPE_STRANGE]         = "Unknown",
-    [PLATFORM_SUBTYPE_STRANGE_2A]      = "Unknown",
-    [PLATFORM_SUBTYPE_EV1_A]           = "A",
-    [PLATFORM_SUBTYPE_EV1_B]           = "B",
-    [PLATFORM_SUBTYPE_EV1_C]           = "C",
-    [PLATFORM_SUBTYPE_EV1_5_A]         = "A",
-    [PLATFORM_SUBTYPE_EV1_5_B]         = "B",
-    [PLATFORM_SUBTYPE_EV2_A]           = "A",
-    [PLATFORM_SUBTYPE_EV2_B]           = "B",
-    [PLATFORM_SUBTYPE_EV2_1_A]         = "A",
-    [PLATFORM_SUBTYPE_EV2_1_B]         = "B",
-    [PLATFORM_SUBTYPE_EV2_1_C]         = "C",
-    [PLATFORM_SUBTYPE_DV_A_ALIAS_MP_A] = "A",
-    [PLATFORM_SUBTYPE_DV_B_ALIAS_MP_B] = "B",
-    [PLATFORM_SUBTYPE_DV_C_ALIAS_MP_C] = "C",
-    [PLATFORM_SUBTYPE_INVALID]         = "Unknown",
-};
-
-CHAR8 *PlatformSubTypeBuildString[] = {
-    [PLATFORM_SUBTYPE_UNKNOWN]         = "Unknown",
-    [PLATFORM_SUBTYPE_CHARM]           = "Unknown",
-    [PLATFORM_SUBTYPE_STRANGE]         = "Unknown",
-    [PLATFORM_SUBTYPE_STRANGE_2A]      = "Unknown",
-    [PLATFORM_SUBTYPE_EV1_A]           = "Epsilon EV1",
-    [PLATFORM_SUBTYPE_EV1_B]           = "Epsilon EV1",
-    [PLATFORM_SUBTYPE_EV1_C]           = "Epsilon EV1",
-    [PLATFORM_SUBTYPE_EV1_5_A]         = "Epsilon EV1.5",
-    [PLATFORM_SUBTYPE_EV1_5_B]         = "Epsilon EV1.5",
-    [PLATFORM_SUBTYPE_EV2_A]           = "Epsilon EV2",
-    [PLATFORM_SUBTYPE_EV2_B]           = "Epsilon EV2",
-    [PLATFORM_SUBTYPE_EV2_1_A]         = "Epsilon EV2.1",
-    [PLATFORM_SUBTYPE_EV2_1_B]         = "Epsilon EV2.1",
-    [PLATFORM_SUBTYPE_EV2_1_C]         = "Epsilon EV2.1",
-    [PLATFORM_SUBTYPE_DV_A_ALIAS_MP_A] = "Epsilon DV Alias MP",
-    [PLATFORM_SUBTYPE_DV_B_ALIAS_MP_B] = "Epsilon DV Alias MP",
-    [PLATFORM_SUBTYPE_DV_C_ALIAS_MP_C] = "Epsilon DV Alias MP",
-    [PLATFORM_SUBTYPE_INVALID]         = "Unknown",
-};
-
 /**
 Display the platform specific debug messages
 **/
@@ -218,14 +175,10 @@ VOID EFIAPI ConsoleMsgLibDisplaySystemInfoOnConsole(VOID)
   CHAR8                 *uefiDate             = NULL;
   CHAR8                 *uefiVersion          = NULL;
   EFIChipInfoVersionType SoCID                = 0;
-  PXBL_HLOS_HOB          PlatformHob          = NULL;
   UINT16                 chipInfoMajorVersion = 0;
   UINT16                 chipInfoMinorVersion = 0;
   UINTN                  DateBufferLength     = 0;
   UINTN                  VersionBufferLength  = 0;
-  UINT8                  BoardID              = 0;
-  CHAR8                 *BuildID              = "Unknown";
-  CHAR8                 *SKUID                = "Unknown";
 
   EFI_CHIPINFO_PROTOCOL *mBoardProtocol = NULL;
 
@@ -255,13 +208,7 @@ VOID EFIAPI ConsoleMsgLibDisplaySystemInfoOnConsole(VOID)
     }
   }
 
-  ConsolePrint(L"  UEFI flavor:     Epsilon");
-
-  PlatformHob = GetPlatformHob();
-
-  if (PlatformHob != NULL) {
-    ConsolePrint(L"  TouchFW version: %a", PlatformHob->TouchFWVersion);
-  }
+  ConsolePrint(L"  UEFI flavor:     Seluna");
 
   ConsolePrint(L"Hardware information:");
 
@@ -275,19 +222,5 @@ VOID EFIAPI ConsoleMsgLibDisplaySystemInfoOnConsole(VOID)
     chipInfoMinorVersion = (UINT16)(SoCID & 0xFFFF);
     ConsolePrint(
         L"  SoC ID:    %d.%d", chipInfoMajorVersion, chipInfoMinorVersion);
-  }
-
-  if (PlatformHob != NULL) {
-    BoardID = PlatformHob->BoardID;
-
-    if (BoardID >= PLATFORM_SUBTYPE_EV1_A &&
-        BoardID <= PLATFORM_SUBTYPE_DV_C_ALIAS_MP_C) {
-      SKUID   = PlatformSubTypeSkuString[BoardID];
-      BuildID = PlatformSubTypeBuildString[BoardID];
-    }
-
-    ConsolePrint(L"  SKU ID:    %d (%a)", BoardID, SKUID);
-    ConsolePrint(L"  Memory ID: 0 (Hynix 6GB)");
-    ConsolePrint(L"  Build ID:  %d (%a)", BoardID, BuildID);
   }
 }

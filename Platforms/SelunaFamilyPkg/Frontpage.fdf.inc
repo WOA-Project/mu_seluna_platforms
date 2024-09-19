@@ -27,32 +27,32 @@
   INF SelunaFamilyPkg/FrontPage/FrontPage.inf
 
   FILE FREEFORM = PCD(gOemPkgTokenSpaceGuid.PcdFrontPageLogoFile) {
-    SECTION RAW = Epsilon/BOOT.XF.3.0-00527-SM8150LZB-1/RawFiles/Logo
+    SECTION RAW = Seluna/BOOT.XF.4.3-00248-ATHERTONLAZ-2/RawFiles/Logo
     SECTION UI = "Logo"
   }
 
   FILE FREEFORM = PCD(gOemPkgTokenSpaceGuid.PcdLowBatteryFile) {
-    SECTION RAW = Epsilon/BOOT.XF.3.0-00527-SM8150LZB-1/RawFiles/Low_Battery
+    SECTION RAW = Seluna/BOOT.XF.4.3-00248-ATHERTONLAZ-2/RawFiles/Low_Battery
     SECTION UI = "Low Battery"
   }
 
   FILE FREEFORM = PCD(gOemPkgTokenSpaceGuid.PcdThermalFile) {
-    SECTION RAW = Epsilon/BOOT.XF.3.0-00527-SM8150LZB-1/RawFiles/Too_Hot
+    SECTION RAW = Seluna/BOOT.XF.4.3-00248-ATHERTONLAZ-2/RawFiles/Too_Hot
     SECTION UI = "Too Hot"
   }
 
   FILE FREEFORM = PCD(gOemPkgTokenSpaceGuid.PcdVolumeUpIndicatorFile) {
-    SECTION RAW = Epsilon/BOOT.XF.3.0-00527-SM8150LZB-1/RawFiles/VolumeUpIndicator
+    SECTION RAW = Seluna/BOOT.XF.4.3-00248-ATHERTONLAZ-2/RawFiles/VolumeUpIndicator
     SECTION UI = "VolumeUpIndicator"
   }
 
   FILE FREEFORM = PCD(gOemPkgTokenSpaceGuid.PcdFirmwareSettingsIndicatorFile) {
-    SECTION RAW = Epsilon/BOOT.XF.3.0-00527-SM8150LZB-1/RawFiles/FirmwareSettingsIndicator
+    SECTION RAW = Seluna/BOOT.XF.4.3-00248-ATHERTONLAZ-2/RawFiles/FirmwareSettingsIndicator
     SECTION UI = "FirmwareSettingsIndicator"
   }
 
   FILE FREEFORM = PCD(gOemPkgTokenSpaceGuid.PcdBootFailIndicatorFile) {
-    SECTION RAW = Epsilon/BOOT.XF.3.0-00527-SM8150LZB-1/RawFiles/BootFailIndicator
+    SECTION RAW = Seluna/BOOT.XF.4.3-00248-ATHERTONLAZ-2/RawFiles/BootFailIndicator
     SECTION UI = "BootFailIndicator"
   }
 

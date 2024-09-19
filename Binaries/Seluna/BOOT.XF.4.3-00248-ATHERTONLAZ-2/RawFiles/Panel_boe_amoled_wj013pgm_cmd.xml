@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PanelName>BOE AMOLED</PanelName>
+<PanelDescription>BOE Single DSI Cmd Mode AMOLED Panel with DSC (408x408 24bpp)</PanelDescription>
+<Group id="Active Timing">
+ <HorizontalActive>408</HorizontalActive>
+ <HorizontalFrontPorch>40</HorizontalFrontPorch>
+ <HorizontalBackPorch>20</HorizontalBackPorch>
+ <HorizontalSyncPulse>0</HorizontalSyncPulse>
+ <HorizontalSyncSkew>0</HorizontalSyncSkew>
+ <HorizontalLeftBorder>0</HorizontalLeftBorder>
+ <HorizontalRightBorder>0</HorizontalRightBorder>
+ <VerticalActive>408</VerticalActive>
+ <VerticalFrontPorch>20</VerticalFrontPorch>
+ <VerticalBackPorch>20</VerticalBackPorch>
+ <VerticalSyncPulse>0</VerticalSyncPulse>
+ <VerticalSyncSkew>0</VerticalSyncSkew>
+ <VerticalTopBorder>0</VerticalTopBorder>
+ <VerticalBottomBorder>0</VerticalBottomBorder>
+</Group>
+<Group id="Display Interface">
+ <InterfaceType>9</InterfaceType>
+ <InterfaceColorFormat>3</InterfaceColorFormat>
+</Group>
+<Group id="DSI Interface">
+ <DSIChannelId>2</DSIChannelId>
+ <DSIVirtualId>0</DSIVirtualId>
+ <DSIColorFormat>36</DSIColorFormat>
+ <DSITrafficMode>1</DSITrafficMode>
+ <DSILanes>1</DSILanes>
+ <DSILowPowerModeInBLLPEOF>True</DSILowPowerModeInBLLPEOF>
+ <DSILowPowerModeInBLLP>True</DSILowPowerModeInBLLP>
+ <DSIRefreshRate>0x3C0000</DSIRefreshRate>
+ <DSICmdSwapInterface>False</DSICmdSwapInterface>
+ <DSICmdUsingTrigger>False</DSICmdUsingTrigger>
+ <DSIEnableAutoRefresh>True</DSIEnableAutoRefresh>
+ <DSIAutoRefreshFrameNumDiv>1</DSIAutoRefreshFrameNumDiv>
+ <DSIClockHSForceRequest>1</DSIClockHSForceRequest>
+ <DSITECheckEnable>True</DSITECheckEnable>
+ <DSITEUsingDedicatedTEPin>True</DSITEUsingDedicatedTEPin>
+ <DSITEvSyncStartPos>408</DSITEvSyncStartPos>
+ <DSITEvSyncInitVal>408</DSITEvSyncInitVal>
+ <DSIControllerMapping>
+  00
+ </DSIControllerMapping>
+</Group>
+<DSIInitSequence>
+15 FF D0
+15 F9 01
+15 22 10
+15 FF 10
+15 F9 01
+15 55 01
+15 FF 10
+15 63 FF
+15 71 82
+15 76 77
+15 6E 72
+15 6F 72
+15 FF 27
+15 F9 01
+15 87 00
+15 88 02
+15 89 02
+15 8A 01
+15 8B 00
+15 8C 02
+15 8D 02
+15 8E 01
+15 8F 11
+15 90 12
+15 91 00
+15 92 02
+15 93 21
+15 94 22
+15 95 11
+15 96 12
+15 97 00
+15 98 20
+15 FF 20
+15 F9 01
+15 30 0f
+15 7D 21
+15 80 11
+15 81 70
+15 82 11
+15 83 11
+15 84 20
+15 85 70
+15 89 03
+15 87 03
+15 FF 20
+15 F9 01
+15 81 01
+15 84 00
+15 85 70
+15 7D 11
+15 58 27
+15 E5 20
+15 59 0C
+39 5D 16 16 49 00 00
+39 61 02 16 49 51 00
+15 FF 23
+15 F9 01
+15 92 01
+15 FF 26
+15 F9 01
+15 8d 03
+15 FF 27
+15 F9 01
+15 96 11
+15 95 12
+15 FF 10
+05 11
+FF 64
+05 29
+</DSIInitSequence>
+<DSITermSequence>
+15 FF 10
+05 28
+05 10
+FF 43
+</DSITermSequence>
+<Group id='Backlight Configuration'>
+ <BacklightType>3</BacklightType>
+ <BacklightBitWidth>8</BacklightBitWidth>
+ <DisplayResetInfo>0 10000 10000 10000 0</DisplayResetInfo>
+</Group>

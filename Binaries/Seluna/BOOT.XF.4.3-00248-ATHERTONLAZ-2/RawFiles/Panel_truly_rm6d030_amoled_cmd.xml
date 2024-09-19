@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PanelName>RM6d030Cmd</PanelName>
+<PanelDescription>RM6d030 command mode 1.41 dsi truly panel</PanelDescription>
+<Group id="Active Timing">
+ <HorizontalActive>320</HorizontalActive>
+ <HorizontalFrontPorch>40</HorizontalFrontPorch>
+ <HorizontalBackPorch>20</HorizontalBackPorch>
+ <HorizontalSyncPulse>4</HorizontalSyncPulse>
+ <HorizontalSyncSkew>0</HorizontalSyncSkew>
+ <HorizontalLeftBorder>0</HorizontalLeftBorder>
+ <HorizontalRightBorder>0</HorizontalRightBorder>
+ <VerticalActive>360</VerticalActive>
+ <VerticalFrontPorch>6</VerticalFrontPorch>
+ <VerticalBackPorch>8</VerticalBackPorch>
+ <VerticalSyncPulse>2</VerticalSyncPulse>
+ <VerticalSyncSkew>0</VerticalSyncSkew>
+ <VerticalTopBorder>0</VerticalTopBorder>
+ <VerticalBottomBorder>0</VerticalBottomBorder>
+</Group>
+<Group id="Display Interface">
+ <InterfaceType>9</InterfaceType>
+ <InterfaceColorFormat>3</InterfaceColorFormat>
+</Group>
+<Group id="DSI Interface">
+ <DSIChannelId>2</DSIChannelId>
+ <DSIVirtualId>0</DSIVirtualId>
+ <DSIColorFormat>36</DSIColorFormat>
+ <DSITrafficMode>1</DSITrafficMode>
+ <DSILanes>1</DSILanes>
+ <DSILowPowerModeInBLLPEOF>True</DSILowPowerModeInBLLPEOF>
+ <DSILowPowerModeInBLLP>True</DSILowPowerModeInBLLP>
+ <DSIRefreshRate>0x3C0000</DSIRefreshRate>
+ <DSICmdSwapInterface>False</DSICmdSwapInterface>
+ <DSICmdUsingTrigger>False</DSICmdUsingTrigger>
+ <DSIEnableAutoRefresh>True</DSIEnableAutoRefresh>
+ <DSIAutoRefreshFrameNumDiv>1</DSIAutoRefreshFrameNumDiv>
+ <DSIClockHSForceRequest>1</DSIClockHSForceRequest>
+ <DSITECheckEnable>True</DSITECheckEnable>
+ <DSITEUsingDedicatedTEPin>True</DSITEUsingDedicatedTEPin>
+ <DSITEvSyncStartPos>360</DSITEvSyncStartPos>
+ <DSITEvSyncInitVal>320</DSITEvSyncInitVal>
+ <DSIControllerMapping>
+  00
+ </DSIControllerMapping>
+</Group>
+<DSIInitSequence>
+15 FE 20
+15 5A 0E
+15 58 07
+15 FE 00
+39 2A 00 00 01 3F
+39 2B 00 00 01 67
+39 30 00 00 01 67
+39 31 00 00 01 3F
+05 35 02
+05 53 20
+05 51 FF
+05 63 FF
+05 12 00
+05 11 00
+FF 32 00
+05 29 00
+</DSIInitSequence>
+<DSITermSequence>
+05 28 00
+05 10 00
+15 4F 01
+</DSITermSequence>
+<Group id='Backlight Configuration'>
+ <BacklightType>3</BacklightType>
+ <BacklightBitWidth>8</BacklightBitWidth>
+ <DisplayResetInfo>0 10 10000 10000 0</DisplayResetInfo>
+</Group>

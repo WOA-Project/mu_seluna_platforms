@@ -78,3 +78,15 @@ pip install --upgrade -r pip-requirements.txt
 ## License
 
 All code is licensed under BSD 2-Clause.
+
+## Testimonials
+
+![image](https://github.com/user-attachments/assets/5c981b22-768d-45cb-aa27-2bf2c80f1606)
+
+![image](https://github.com/user-attachments/assets/939e1468-f108-4e4a-876e-b901392973b5)
+
+![image](https://github.com/user-attachments/assets/64e87b20-a67a-476f-836b-b568131e2e9a)
+
+_People really thought we wouldnt be serious about this like with Surface Duo and Lumia 950s heh?_
+
+

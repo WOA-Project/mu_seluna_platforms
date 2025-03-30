@@ -22,7 +22,6 @@
   CompilerIntrinsicsLib
   CacheMaintenanceLib
   MemoryMapHelperLib
-  TimerLib
 
 [Pcd]
   gSelunaPkgTokenSpaceGuid.PcdMipiFrameBufferWidth

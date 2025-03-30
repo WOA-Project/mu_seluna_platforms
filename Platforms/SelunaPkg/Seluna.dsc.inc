@@ -54,12 +54,12 @@
   gEfiMdePkgTokenSpaceGuid.PcdPostCodePropertyMask|0
   gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x07
 !else
-  gEfiMdePkgTokenSpaceGuid.PcdDebugClearMemoryValue|0xAF
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x2f
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x800fee0f
-  gEfiMdePkgTokenSpaceGuid.PcdPerformanceLibraryPropertyMask|1
+  gEfiMdePkgTokenSpaceGuid.PcdDebugClearMemoryValue|0x00
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x00
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x00000000
+  gEfiMdePkgTokenSpaceGuid.PcdPerformanceLibraryPropertyMask|0
   gEfiMdePkgTokenSpaceGuid.PcdPostCodePropertyMask|0
-  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x07
+  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x00
 !endif
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
@@ -563,24 +563,12 @@
       TlsLib|OpensslPkg/Library/TlsLib/TlsLib.inf
       IntrinsicLib|OpensslPkg/Library/IntrinsicLib/IntrinsicLib.inf
       OpensslLib|OpensslPkg/Library/OpensslLib/OpensslLib.inf # Contains openSSL library used by BaseCryptoLib
-
-      SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
   }
 
   MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
 
   MsCorePkg/CheckHardwareConnected/CheckHardwareConnected.inf
-  MsCorePkg/MuVarPolicyFoundationDxe/MuVarPolicyFoundationDxe.inf {
-    <LibraryClasses>
-      SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
-    <PcdsFixedAtBuild.common>
-      gEfiMdePkgTokenSpaceGuid.PcdDebugClearMemoryValue|0x00
-      gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x00
-      gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x00000000
-      gEfiMdePkgTokenSpaceGuid.PcdPerformanceLibraryPropertyMask|0
-      gEfiMdePkgTokenSpaceGuid.PcdPostCodePropertyMask|0
-      gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x00
-  }
+  MsCorePkg/MuVarPolicyFoundationDxe/MuVarPolicyFoundationDxe.inf
 
   NetworkPkg/ArpDxe/ArpDxe.inf
   NetworkPkg/Dhcp4Dxe/Dhcp4Dxe.inf

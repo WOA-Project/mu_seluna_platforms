@@ -12,7 +12,6 @@
 #include <Library/HobLib.h>
 #include <Library/MemoryMapHelperLib.h>
 #include <Library/SerialPortLib.h>
-#include <Library/TimerLib.h>
 
 #include <Resources/FbColor.h>
 #include <Resources/font5x12.h>
@@ -145,7 +144,6 @@ paint:
   return;
 
 newline:
-  MicroSecondDelay (100000);
   p_Position->y += scale_factor;
   p_Position->x = 0;
   if (p_Position->y >= m_MaxPosition.y - scale_factor) {

@@ -1,37 +1,42 @@
     INF SelunaPkg/Driver/GpioButtons/GpioButtons.inf
     INF SelunaPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
 
-    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ASN1X509Dxe/ASN1X509Dxe.inf
-    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/CipherDxe/CipherDxe.inf
     # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/DisplayDxe/DisplayDxe.inf
     # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/EnvDxe/EnvDxe.inf
     # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/FuseInfoDxe/FuseInfoDxe.inf
-    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/HashDxe/HashDxe.inf
-    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/MacDxe/MacDxe.inf
     # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/MinidumpTADxe/MinidumpTADxe.inf
     # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/PILDxe/PILDxe.inf
     # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/QcomBds/QcomBds.inf
-    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/RNGDxe/RngDxe.inf
-    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/SdccDxe/SdccDxe.inf
-    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/SecRSADxe/SecRSADxe.inf
-    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
     # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/VariableDxe/VariableDxe.inf
-    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/VerifiedBootDxe/VerifiedBootDxe.inf
 
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Application/QcomChargerApp/QcomChargerApp.inf
+
+    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ASN1X509Dxe/ASN1X509Dxe.inf
+    FILE DRIVER = C2F9A4F5-F7B4-43E7-BA99-5EA804CC103A {
+            SECTION UI = "ASN1X509Dxe"
+            SECTION PE32 = Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ASN1X509Dxe/ASN1X509Dxe.efi
+    }
+
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
+
     # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ClockDxe/ClockDxe.inf
     ## TODO: Review Patch granularity
     INF QcomPkg/PatchedBinaries/ClockDxe.inf
+
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/DALSYSDxe/DALSYSDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/DDRInfoDxe/DDRInfoDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/FontDxe/FontDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/GLinkDxe/GLinkDxe.inf
-    INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
-    INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
+
+    ## Hangs
+    ## INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
+
+    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
+    INF QcomPkg/PatchedBinaries/HALIOMMUDxe.inf
+    
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/I2CDxe/I2CDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/NpaDxe/NpaDxe.inf
@@ -44,11 +49,19 @@
     ## INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/QcomWDogDxe/QcomWDogDxe.inf
 
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ResetRuntimeDxe/ResetRuntimeDxe.inf
+
+    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/SecRSADxe/SecRSADxe.inf
+    FILE DRIVER = 32C71E68-83A8-46ED-AED1-094E71B12057 {
+            SECTION UI = "SecRSADxe"
+            SECTION PE32 = Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/SecRSADxe/SecRSADxe.efi
+    }
+
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ShmBridgeDxe/ShmBridgeDxeLA.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/SimpleTextInOutSerialDxe/SimpleTextInOutSerial.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/SmemDxe/SmemDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/SPIDxe/SPIDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/SPMIDxe/SPMIDxe.inf
+    INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/SdccDxe/SdccDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/TLMMDxe/TLMMDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
 
@@ -59,14 +72,13 @@
     ## INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/TzDxe/TzDxeLA.inf
 
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/ULogDxe/ULogDxe.inf
+    INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
-
-    ## Needs VerifiedBootDxe
-    ## INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
-
+    INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
     INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/VcsDxe/VcsDxe.inf
+    INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/VerifiedBootDxe/VerifiedBootDxe.inf
 
     FILE DRIVER = 6b38f7b4-ad98-40e9-9093-aca2b5a253c4 {
             SECTION PE32 = Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.efi
@@ -78,16 +90,25 @@
             SECTION UI = "PartitionDxe"
     }
 
+    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/HashDxe/HashDxe.inf
     FILE DRIVER = 3adf8dda-1850-44c5-8c63-bb991849bc6f {
             SECTION UI = "HashDxe"
             SECTION PE32 = Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/HashDxe/HashDxe.efi
     }
 
+    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/CipherDxe/CipherDxe.inf
     FILE DRIVER = 5f0937cd-73f9-445e-b320-bb6fd5d3cbde {
             SECTION UI = "CipherDxe"
             SECTION PE32 = Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/CipherDxe/CipherDxe.efi
     }
 
+    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/MacDxe/MacDxe.inf
+    FILE DRIVER = 20583A66-3C26-4D9E-9A8C-E2DFA2914015 {
+            SECTION UI = "MacDxe"
+            SECTION PE32 = Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/MacDxe/MacDxe.efi
+    }
+
+    # INF Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/RNGDxe/RngDxe.inf
     FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
             SECTION UI = "RngDxe"
             SECTION PE32 = Seluna/BOOT.XF.4.3-00257-ATHERTONLAZ-1/QcomPkg/Drivers/RNGDxe/RngDxe.efi

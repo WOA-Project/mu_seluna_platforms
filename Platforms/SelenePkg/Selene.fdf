@@ -105,7 +105,7 @@ READ_LOCK_STATUS   = TRUE
   INF SelunaPkg/Driver/SmBiosTableDxe/SmBiosTableDxe.inf
 
   # ACPI Tables
-  #INF RuleOverride=ACPITABLE SelenePkg/AcpiTables/AcpiTables.inf
+  INF RuleOverride=ACPITABLE SelenePkg/AcpiTables/AcpiTables.inf
 
   INF MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf
 
@@ -176,7 +176,7 @@ READ_LOCK_STATUS   = TRUE
   # INF NetworkPkg/UefiPxeBcDxe/UefiPxeBcDxe.inf
   # INF NetworkPkg/VlanConfigDxe/VlanConfigDxe.inf
 
-  # INF SelunaPkg/UFP/ufpdevicefw.inf
+  INF SelunaPkg/UFP/ufpdevicefw.inf
 
   INF QcomModulePkg/Application/LinuxLoader/LinuxLoader.inf
 

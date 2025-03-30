@@ -613,7 +613,7 @@
   # PrePI
   SelunaPkg/PrePi/PeiUniCore.inf
 
-  ## SelunaPkg/UFP/ufpdevicefw.inf
+  SelunaPkg/UFP/ufpdevicefw.inf
 
 	QcomModulePkg/Application/LinuxLoader/LinuxLoader.inf {
 		<LibraryClasses>

@@ -89,4 +89,4 @@
 !include SelunaPkg/Frontpage.dsc.inc
 
 [Components.common]
-  #LunaPkg/AcpiTables/AcpiTables.inf
+  LunaPkg/AcpiTables/AcpiTables.inf

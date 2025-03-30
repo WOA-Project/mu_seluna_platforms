@@ -60,7 +60,7 @@
   #
   # This library is for showing the main system boot graphics.
   #
-  BootGraphicsLib|MsGraphicsPkg/Library/BootGraphicsLib/BootGraphicsLib.inf
+  BootGraphicsLib|SelunaPkg/Library/BootGraphicsLib/BootGraphicsLib.inf
   #
   # BootGraphicsProviderLib that uses PCDs and raw files in the firmware volumes
   #

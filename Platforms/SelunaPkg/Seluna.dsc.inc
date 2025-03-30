@@ -48,18 +48,18 @@
 
 !if $(TARGET) == DEBUG
   gEfiMdePkgTokenSpaceGuid.PcdDebugClearMemoryValue|0xAF
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0xff
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0xffffffff
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x2f
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x800fee0f
   gEfiMdePkgTokenSpaceGuid.PcdPerformanceLibraryPropertyMask|1
   gEfiMdePkgTokenSpaceGuid.PcdPostCodePropertyMask|0
-  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0xff
+  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x07
 !else
-  gEfiMdePkgTokenSpaceGuid.PcdDebugClearMemoryValue|0xAF
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0xff
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0xffffffff
-  gEfiMdePkgTokenSpaceGuid.PcdPerformanceLibraryPropertyMask|1
+  gEfiMdePkgTokenSpaceGuid.PcdDebugClearMemoryValue|0x00
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x00
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x00000000
+  gEfiMdePkgTokenSpaceGuid.PcdPerformanceLibraryPropertyMask|0
   gEfiMdePkgTokenSpaceGuid.PcdPostCodePropertyMask|0
-  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0xff
+  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x00
 !endif
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
@@ -513,7 +513,7 @@
 
   MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
   MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
-  MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
+  SelunaPkg/Driver/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
 
   MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
 
@@ -563,22 +563,12 @@
       TlsLib|OpensslPkg/Library/TlsLib/TlsLib.inf
       IntrinsicLib|OpensslPkg/Library/IntrinsicLib/IntrinsicLib.inf
       OpensslLib|OpensslPkg/Library/OpensslLib/OpensslLib.inf # Contains openSSL library used by BaseCryptoLib
-
-      SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
   }
 
   MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
 
   MsCorePkg/CheckHardwareConnected/CheckHardwareConnected.inf
-  MsCorePkg/MuVarPolicyFoundationDxe/MuVarPolicyFoundationDxe.inf {
-    <PcdsFixedAtBuild.common>
-      gEfiMdePkgTokenSpaceGuid.PcdDebugClearMemoryValue|0x00
-      gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x00
-      gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x00000000
-      gEfiMdePkgTokenSpaceGuid.PcdPerformanceLibraryPropertyMask|0
-      gEfiMdePkgTokenSpaceGuid.PcdPostCodePropertyMask|0
-      gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x00
-  }
+  MsCorePkg/MuVarPolicyFoundationDxe/MuVarPolicyFoundationDxe.inf
 
   NetworkPkg/ArpDxe/ArpDxe.inf
   NetworkPkg/Dhcp4Dxe/Dhcp4Dxe.inf
@@ -623,7 +613,7 @@
   # PrePI
   SelunaPkg/PrePi/PeiUniCore.inf
 
-  SelunaPkg/UFP/ufpdevicefw.inf
+  ## SelunaPkg/UFP/ufpdevicefw.inf
 
 	QcomModulePkg/Application/LinuxLoader/LinuxLoader.inf {
 		<LibraryClasses>

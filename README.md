@@ -2,13 +2,13 @@
 
 ## For users
 
-You can download the latest UEFI build by clicking [here](https://github.com/WOA-Project/SelunaPkg/releases).
+You can download the latest UEFI build by clicking [here](https://github.com/WOA-Project/mu_seluna_platforms/releases).
 
-[![Build Status (Visual Studio Team Services)](https://gus33000.visualstudio.com/SelunaPkg/_apis/build/status/SelunaPkg%20CI?branchName=main)](https://gus33000.visualstudio.com/SelunaPkg/_build/latest?definitionId=1&branchName=main)
+[![Build Status (Visual Studio Team Services)](https://gus33000.visualstudio.com/mu_seluna_platforms/_apis/build/status/mu_seluna_platforms%20CI?branchName=main)](https://gus33000.visualstudio.com/mu_seluna_platforms/_build/latest?definitionId=1&branchName=main)
 
 ## What's this?
 
-This package demonstrates an AArch64 UEFI implementation for hacked Selene and Luna devices. Currently it is able to boot Windows 10 ARM64 as well as Windows 11 ARM64. Please be aware that SW5100 devices have limited support.
+This package demonstrates an AArch64 UEFI implementation for hacked Selene and Luna devices. Currently it is able to boot Windows 10 ARM64 as well as Windows 11 ARM64. Please be aware that Selene devices have limited support.
 
 ## Support Status
 
@@ -17,7 +17,7 @@ Applicable to all supported targets unless noted.
 - Low-speed I/O: I2C, SPI, GPIO, SPMI and Pinmux (TLMM).
 - Power Management: PMIC and Resource Power Manager (RPM).
 - High-speed I/O for firmware and HLOS: UFS 3.1
-- Peripherals: Touchscreen (HID SPI), side-band buttons (TLMM GPIO and PMIC GPIO)
+- Peripherals: Side-band buttons (TLMM GPIO and PMIC GPIO)
 - Display FrameBuffer
 
 ## What can you do?

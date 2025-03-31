@@ -1,10 +1,10 @@
 [000h 0000   4]                    Signature : "PPTT"    [Processor Properties Topology Table]
-[004h 0004   4]                 Table Length : 0000019E
+[004h 0004   4]                 Table Length : 0000012E
 [008h 0008   1]                     Revision : 01
-[009h 0009   1]                     Checksum : 00
+[009h 0009   1]                     Checksum : B3
 [00Ah 0010   6]                       Oem ID : "QCOM  "
 [010h 0016   8]                 Oem Table ID : "QCOMEDK2"
-[018h 0024   4]                 Oem Revision : 00008150
+[018h 0024   4]                 Oem Revision : 00005100
 [01Ch 0028   4]              Asl Compiler ID : "QCOM"
 [020h 0032   4]        Asl Compiler Revision : 00000001
 
@@ -181,63 +181,3 @@
 [122h 0290   4]      Private Resource Number : 00000002
 [126h 0294   4]             Private Resource : 0000008E
 [12Ah 0298   4]             Private Resource : 000000A6
-
-[12Eh 0302   1]                Subtable Type : 00 [Processor Hierarchy Node]
-[12Fh 0303   1]                       Length : 1C
-[130h 0304   2]                     Reserved : 0000
-[132h 0306   4]        Flags (decoded below) : 00000002
-                            Physical package : 0
-                     ACPI Processor ID valid : 1
-                       Processor is a thread : 0
-                              Node is a leaf : 0
-                    Identical Implementation : 0
-[136h 0310   4]                       Parent : 0000005A
-[13Ah 0314   4]            ACPI Processor ID : 00000004
-[13Eh 0318   4]      Private Resource Number : 00000002
-[142h 0322   4]             Private Resource : 0000008E
-[146h 0326   4]             Private Resource : 000000A6
-
-[14Ah 0330   1]                Subtable Type : 00 [Processor Hierarchy Node]
-[14Bh 0331   1]                       Length : 1C
-[14Ch 0332   2]                     Reserved : 0000
-[14Eh 0334   4]        Flags (decoded below) : 00000002
-                            Physical package : 0
-                     ACPI Processor ID valid : 1
-                       Processor is a thread : 0
-                              Node is a leaf : 0
-                    Identical Implementation : 0
-[152h 0338   4]                       Parent : 0000005A
-[156h 0342   4]            ACPI Processor ID : 00000005
-[15Ah 0346   4]      Private Resource Number : 00000002
-[15Eh 0350   4]             Private Resource : 0000008E
-[162h 0354   4]             Private Resource : 000000A6
-
-[166h 0358   1]                Subtable Type : 00 [Processor Hierarchy Node]
-[167h 0359   1]                       Length : 1C
-[168h 0360   2]                     Reserved : 0000
-[16Ah 0362   4]        Flags (decoded below) : 00000002
-                            Physical package : 0
-                     ACPI Processor ID valid : 1
-                       Processor is a thread : 0
-                              Node is a leaf : 0
-                    Identical Implementation : 0
-[16Eh 0366   4]                       Parent : 0000005A
-[172h 0370   4]            ACPI Processor ID : 00000006
-[176h 0374   4]      Private Resource Number : 00000002
-[17Ah 0378   4]             Private Resource : 0000008E
-[17Eh 0382   4]             Private Resource : 000000A6
-
-[182h 0386   1]                Subtable Type : 00 [Processor Hierarchy Node]
-[183h 0387   1]                       Length : 1C
-[184h 0388   2]                     Reserved : 0000
-[186h 0390   4]        Flags (decoded below) : 00000002
-                            Physical package : 0
-                     ACPI Processor ID valid : 1
-                       Processor is a thread : 0
-                              Node is a leaf : 0
-                    Identical Implementation : 0
-[18Ah 0394   4]                       Parent : 0000005A
-[18Eh 0398   4]            ACPI Processor ID : 00000007
-[192h 0402   4]      Private Resource Number : 00000002
-[196h 0406   4]             Private Resource : 0000008E
-[19Ah 0410   4]             Private Resource : 000000A6

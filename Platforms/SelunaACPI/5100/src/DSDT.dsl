@@ -1,6 +1,6 @@
 DefinitionBlock ("DSDT.aml", "DSDT", 2, "QCOMM ", "SDW5100 ", 0x00000003)
 {
-    Scope (\_SB)
+    Scope (_SB)
     {
         Device (CPU0)
         {

@@ -31,3 +31,6 @@
 [submodule "Binaries"]
 	path = Binaries
 	url = https://github.com/WOA-Project/SelunaBinaries
+[submodule "Platforms/SelunaACPI"]
+	path = Platforms/SelunaACPI
+	url = https://github.com/WOA-Project/acpi_oem_google_pixel_watch_common

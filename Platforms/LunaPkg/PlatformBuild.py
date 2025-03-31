@@ -73,6 +73,7 @@ class SettingsManager(UpdateSettingsManager, SetupSettingsManager, PrEvalSetting
         """
         return [
             RequiredSubmodule("Binaries", True),
+            RequiredSubmodule("Platforms/SelunaACPI", True),
             RequiredSubmodule("Common/MU_OEM_SAMPLE", True),
             RequiredSubmodule("Common/MU_TIANO", True),
             RequiredSubmodule("Common/MU", True),

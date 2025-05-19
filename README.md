@@ -22,7 +22,7 @@ Applicable to all supported targets unless noted.
 
 ## What can you do?
 
-Please see https://github.com/WOA-Project/Seluna-Guides for some tutorials.
+Please see https://github.com/WOA-Project/PixelWatch-Guides for some tutorials.
 
 ## Compatibility
 
